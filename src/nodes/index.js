@@ -3,6 +3,7 @@ import {
   SubStepNodeTop,
   SubStepNodeBottom,
   LogoNode,
+  SubSubStepNode,
 } from './CustomNode';
 
 export const initialNodes = [
@@ -35,10 +36,26 @@ export const initialNodes = [
   {
     id: 'node-4',
     type: 'substep-node-top',
-    sourcePosition: 'top',
-    targetPosition: 'bottom',
+    // sourcePosition: 'top',
+    // targetPosition: 'bottom',
     position: { x: 250, y: -200 },
     data: { label: 'node-4' },
+  },
+  {
+    id: 'node-4.1',
+    type: 'subsubstep-node',
+    sourcePosition: 'top',
+    targetPosition: 'bottom',
+    position: { x: 120, y: -150 },
+    data: { label: 'node-4.1' },
+  },
+  {
+    id: 'node-4.2',
+    type: 'subsubstep-node',
+    sourcePosition: 'top',
+    targetPosition: 'bottom',
+    position: { x: 420, y: -150 },
+    data: { label: 'node-4.2' },
   },
   {
     id: 'node-5',
@@ -83,6 +100,14 @@ export const initialNodes = [
     data: { label: 'node-10' },
   },
   {
+    id: 'node-10.1',
+    type: 'subsubstep-node',
+    sourcePosition: 'top',
+    targetPosition: 'bottom',
+    position: { x: 1150, y: -180 },
+    data: { label: 'node-10.1' },
+  },
+  {
     id: 'node-11',
     type: 'logo-node',
     position: { x: 1500, y: 0 },
@@ -122,6 +147,22 @@ export const initialNodes = [
     targetPosition: 'bottom',
     position: { x: 250, y: 300 },
     data: { label: 'node-4' },
+  },
+  {
+    id: 'node-2.4.1',
+    type: 'subsubstep-node',
+    sourcePosition: 'top',
+    targetPosition: 'bottom',
+    position: { x: 120, y: 250 },
+    data: { label: 'node-4.1' },
+  },
+  {
+    id: 'node-2.4.2',
+    type: 'subsubstep-node',
+    sourcePosition: 'top',
+    targetPosition: 'bottom',
+    position: { x: 420, y: 250 },
+    data: { label: 'node-4.2' },
   },
   {
     id: 'node-2.5',
@@ -166,6 +207,14 @@ export const initialNodes = [
     data: { label: 'node-10' },
   },
   {
+    id: 'node-2.10.1',
+    type: 'subsubstep-node',
+    sourcePosition: 'top',
+    targetPosition: 'bottom',
+    position: { x: 1150, y: 320 },
+    data: { label: 'node-10.1' },
+  },
+  {
     id: 'node-2.11',
     type: 'logo-node',
     position: { x: 1500, y: 500 },
@@ -178,5 +227,6 @@ export const nodeTypes = {
   'step-node': StepNode,
   'substep-node-top': SubStepNodeTop,
   'substep-node-bottom': SubStepNodeBottom,
+  'subsubstep-node': SubSubStepNode,
   'logo-node': LogoNode,
 };

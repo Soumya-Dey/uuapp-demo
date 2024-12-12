@@ -26,6 +26,19 @@ export const StepNode = ({
         position={Position.Left}
         isConnectable={isConnectable}
       />
+      <Handle
+        type='target'
+        position={Position.Top}
+        id='top'
+        // style={{ left: 10 }}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        type='target'
+        position={Position.Bottom}
+        id='bottom'
+        isConnectable={isConnectable}
+      />
       {data.label && (
         <div
           className='custom-node'
@@ -43,21 +56,8 @@ export const StepNode = ({
 
       <Handle
         type='source'
-        position={Position.Top}
-        id='top'
-        // style={{ left: 10 }}
-        isConnectable={isConnectable}
-      />
-      <Handle
-        type='source'
         position={Position.Right}
         id='right'
-        isConnectable={isConnectable}
-      />
-      <Handle
-        type='source'
-        position={Position.Bottom}
-        id='bottom'
         isConnectable={isConnectable}
       />
     </div>
@@ -104,17 +104,17 @@ export const SubStepNodeTop = ({ data, isConnectable, selected }) => {
       )}
       <Handle
         type='target'
+        position={Position.Top}
+        id='top'
+        isConnectable={isConnectable}
+      />
+      <Handle
+        type='source'
         id='bottom'
         position={Position.Bottom}
         isConnectable={isConnectable}
       />
       {data.label && <div className='custom-node'>{data.label}</div>}
-      <Handle
-        type='source'
-        position={Position.Top}
-        id='top'
-        isConnectable={isConnectable}
-      />
     </div>
   ) : null;
 };
@@ -155,18 +155,78 @@ export const SubStepNodeBottom = ({ data, isConnectable, selected }) => {
         </div>
       )}
       <Handle
-        type='target'
+        type='source'
         id='top'
         position={Position.Top}
         isConnectable={isConnectable}
       />
-      {data.label && <div className='custom-node'>{data.label}</div>}
       <Handle
-        type='source'
+        type='target'
         position={Position.Bottom}
         id='bottom'
         isConnectable={isConnectable}
       />
+      {data.label && <div className='custom-node'>{data.label}</div>}
+    </div>
+  ) : null;
+};
+
+const zoomSelectorLevel2 = (s) => {
+  // console.log({ s });
+  return s.transform[2] >= 0.85;
+};
+
+export const SubSubStepNode = ({ data, isConnectable, selected }) => {
+  const showContent = useStore(zoomSelectorLevel2);
+
+  return showContent ? (
+    // We add this class to use the same styles as React Flow's default nodes.
+    <div
+      className='sub-step-node'
+      style={{
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '80px',
+        height: '80px',
+        textAlign: 'center',
+        border: '1px solid #aaaaaa',
+        borderRadius: '40px',
+        background: selected ? '#eeeeee' : 'transparent',
+      }}
+    >
+      {selected && (
+        <div
+          style={{
+            position: 'absolute',
+            padding: '8px 4px',
+            width: '60px',
+            border: '1px solid #aaaaaa',
+            borderRadius: '4px',
+            right: '-90px',
+            top: '-20px',
+          }}
+        >
+          <p style={{ color: 'red', padding: 0, margin: 0 }}>R: 5</p>
+          <p style={{ color: 'orange', padding: 0, margin: 0 }}>A: 10</p>
+          <p style={{ color: 'green', padding: 0, margin: 0 }}>G: 78</p>
+          <p style={{ color: 'blue', padding: 0, margin: 0 }}>B: 34</p>
+        </div>
+      )}
+      <Handle
+        type='source'
+        id='top'
+        position={Position.Top}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        type='target'
+        position={Position.Bottom}
+        id='bottom'
+        isConnectable={isConnectable}
+      />
+      {data.label && <div className='custom-node'>{data.label}</div>}
     </div>
   ) : null;
 };
