@@ -110,7 +110,7 @@ export const initialNodes = [
   {
     id: 'node-11',
     type: 'logo-node',
-    position: { x: 1500, y: 0 },
+    position: { x: 1470, y: 0 },
     data: { label: 'node-11' },
   },
 
@@ -217,7 +217,7 @@ export const initialNodes = [
   {
     id: 'node-2.11',
     type: 'logo-node',
-    position: { x: 1500, y: 500 },
+    position: { x: 1470, y: 500 },
     data: { label: 'node-11' },
   },
 ];

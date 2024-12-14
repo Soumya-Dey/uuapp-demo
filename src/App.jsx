@@ -7,6 +7,7 @@ import {
   addEdge,
   applyEdgeChanges,
   applyNodeChanges,
+  useStoreApi,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
@@ -30,6 +31,22 @@ const Flow = () => {
     (connection) => setEdges((eds) => addEdge(connection, eds)),
     [setEdges]
   );
+  const onNodeMouseEnter = (_, node) => {
+    setNodes((nds) =>
+      nds.map((n) => ({
+        ...n,
+        data: { ...n.data, selected: n.id === node.id },
+      }))
+    );
+  };
+  const onNodeMouseLeave = () => {
+    setNodes((nds) =>
+      nds.map((n) => ({
+        ...n,
+        data: { ...n.data, selected: false },
+      }))
+    );
+  };
 
   return (
     <ReactFlow
@@ -40,6 +57,9 @@ const Flow = () => {
       onConnect={onConnect}
       nodeTypes={nodeTypes}
       edgeTypes={edgeTypes}
+      nodesDraggable={false}
+      onNodeMouseEnter={onNodeMouseEnter}
+      onNodeMouseLeave={onNodeMouseLeave}
       attributionPosition='top-right'
       fitView
       // style={rfStyle}

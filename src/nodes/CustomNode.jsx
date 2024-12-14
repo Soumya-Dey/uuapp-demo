@@ -69,7 +69,7 @@ const zoomSelector = (s) => {
   return s.transform[2] >= 0.75;
 };
 
-export const SubStepNodeTop = ({ data, isConnectable, selected }) => {
+export const SubStepNodeTop = ({ data, isConnectable }) => {
   const showContent = useStore(zoomSelector);
 
   return showContent ? (
@@ -81,10 +81,10 @@ export const SubStepNodeTop = ({ data, isConnectable, selected }) => {
         textAlign: 'center',
         border: '1px solid #aaaaaa',
         borderRadius: '4px',
-        background: selected ? '#eeeeee' : 'transparent',
+        background: data.selected ? '#eeeeee' : 'transparent',
       }}
     >
-      {selected && (
+      {data.selected && (
         <div
           style={{
             position: 'absolute',
@@ -121,7 +121,7 @@ export const SubStepNodeTop = ({ data, isConnectable, selected }) => {
   ) : null;
 };
 
-export const SubStepNodeBottom = ({ data, isConnectable, selected }) => {
+export const SubStepNodeBottom = ({ data, isConnectable }) => {
   const showContent = useStore(zoomSelector);
 
   return showContent ? (
@@ -135,10 +135,10 @@ export const SubStepNodeBottom = ({ data, isConnectable, selected }) => {
         textAlign: 'center',
         border: '1px solid #aaaaaa',
         borderRadius: '4px',
-        background: selected ? '#eeeeee' : 'transparent',
+        background: data.selected ? '#eeeeee' : 'transparent',
       }}
     >
-      {selected && (
+      {data.selected && (
         <div
           style={{
             position: 'absolute',
@@ -180,7 +180,7 @@ const zoomSelectorLevel2 = (s) => {
   return s.transform[2] >= 0.85;
 };
 
-export const SubSubStepNode = ({ data, isConnectable, selected }) => {
+export const SubSubStepNode = ({ data, isConnectable }) => {
   const showContent = useStore(zoomSelectorLevel2);
 
   return showContent ? (
@@ -197,10 +197,10 @@ export const SubSubStepNode = ({ data, isConnectable, selected }) => {
         textAlign: 'center',
         border: '1px solid #aaaaaa',
         borderRadius: '40px',
-        background: selected ? '#eeeeee' : 'transparent',
+        background: data.selected ? '#eeeeee' : 'transparent',
       }}
     >
-      {selected && (
+      {data.selected && (
         <div
           style={{
             position: 'absolute',
@@ -245,7 +245,7 @@ export const LogoNode = ({ data, isConnectable }) => {
         width: '34px',
         height: '34px',
         padding: '4px',
-        border: '2px solid red',
+        border: '2px solid #202020',
         borderRadius: '50%',
       }}
     >
@@ -261,7 +261,7 @@ export const LogoNode = ({ data, isConnectable }) => {
         fill='none'
         viewBox='0 0 24 24'
         strokeWidth={1.5}
-        stroke='red'
+        stroke='currentColor'
         className='size-6'
       >
         <path

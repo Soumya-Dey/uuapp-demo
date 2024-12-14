@@ -1,10 +1,10 @@
 import { MarkerType } from '@xyflow/react';
-import { CustomEdge, CustomEdgeLevel2 } from './CustomEdge';
+import { CustomEdge, CustomEdgeLevel2, CustomEdgeWithIcon } from './CustomEdge';
 
 export const initialEdges = [
   {
     id: 'edge-0-1',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-0',
     target: 'node-1',
     sourceHandle: 'right',
@@ -118,7 +118,7 @@ export const initialEdges = [
   },
   {
     id: 'edge-3-5',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-3',
     target: 'node-5',
     sourceHandle: 'right',
@@ -158,7 +158,7 @@ export const initialEdges = [
   },
   {
     id: 'edge-6-7',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-6',
     target: 'node-7',
     sourceHandle: 'right',
@@ -275,7 +275,7 @@ export const initialEdges = [
 
   {
     id: 'edge-2.0-2.1',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-2.0',
     target: 'node-2.1',
     sourceHandle: 'right',
@@ -389,7 +389,7 @@ export const initialEdges = [
   },
   {
     id: 'edge-2.3-2.5',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-2.3',
     target: 'node-2.5',
     sourceHandle: 'right',
@@ -429,7 +429,7 @@ export const initialEdges = [
   },
   {
     id: 'edge-2.6-2.7',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-2.6',
     target: 'node-2.7',
     sourceHandle: 'right',
@@ -545,6 +545,7 @@ export const initialEdges = [
   },
 ];
 export const edgeTypes = {
+  'step-edge-icon': CustomEdgeWithIcon,
   'substep-edge': CustomEdge,
   'subsubstep-edge': CustomEdgeLevel2,
 };
