@@ -35,7 +35,7 @@ const Flow = () => {
     setNodes((nds) =>
       nds.map((n) => ({
         ...n,
-        data: { ...n.data, selected: n.id === node.id },
+        data: { ...n.data, hovered: n.id === node.id },
       }))
     );
   };
@@ -43,7 +43,7 @@ const Flow = () => {
     setNodes((nds) =>
       nds.map((n) => ({
         ...n,
-        data: { ...n.data, selected: false },
+        data: { ...n.data, hovered: false },
       }))
     );
   };

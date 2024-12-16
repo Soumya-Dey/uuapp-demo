@@ -1,5 +1,6 @@
 import { Handle, Position, useStore } from '@xyflow/react';
 import { useEffect } from 'react';
+import Chart from '../components/Chart';
 
 export const StepNode = ({
   // positionAbsoluteX,
@@ -29,7 +30,7 @@ export const StepNode = ({
         textAlign: 'center',
         border: '2px solid black',
         borderRadius: '41px',
-        background: data.selected ? '#eeeeee' : 'transparent',
+        background: data.hovered ? '#eeeeee' : 'transparent',
       }}
     >
       <Handle
@@ -81,7 +82,7 @@ const zoomSelector = (s) => {
   return s.transform[2] >= 0.75;
 };
 
-export const SubStepNodeTop = ({ data, isConnectable }) => {
+export const SubStepNodeTop = ({ data, isConnectable, selected }) => {
   const showContent = useStore(zoomSelector);
 
   return showContent ? (
@@ -93,10 +94,11 @@ export const SubStepNodeTop = ({ data, isConnectable }) => {
         textAlign: 'center',
         border: '2px solid black',
         borderRadius: '4px',
-        background: data.selected ? '#eeeeee' : 'transparent',
+        background: data.hovered ? '#eeeeee' : 'transparent',
       }}
     >
-      {data.selected && (
+      {selected && <Chart />}
+      {data.hovered && !selected ? (
         <div
           style={{
             position: 'absolute',
@@ -115,7 +117,7 @@ export const SubStepNodeTop = ({ data, isConnectable }) => {
           <p style={{ color: 'green', padding: 0, margin: 0 }}>G: 78</p>
           <p style={{ color: 'blue', padding: 0, margin: 0 }}>B: 34</p>
         </div>
-      )}
+      ) : null}
       <Handle
         type='target'
         position={Position.Top}
@@ -132,7 +134,7 @@ export const SubStepNodeTop = ({ data, isConnectable }) => {
     </div>
   ) : null;
 };
-export const SubStepNodeBottom = ({ data, isConnectable }) => {
+export const SubStepNodeBottom = ({ data, isConnectable, selected }) => {
   const showContent = useStore(zoomSelector);
 
   return showContent ? (
@@ -146,10 +148,11 @@ export const SubStepNodeBottom = ({ data, isConnectable }) => {
         textAlign: 'center',
         border: '2px solid black',
         borderRadius: '4px',
-        background: data.selected ? '#eeeeee' : 'transparent',
+        background: data.hovered ? '#eeeeee' : 'transparent',
       }}
     >
-      {data.selected && (
+      {selected && <Chart />}
+      {data.hovered && !selected ? (
         <div
           style={{
             position: 'absolute',
@@ -168,7 +171,7 @@ export const SubStepNodeBottom = ({ data, isConnectable }) => {
           <p style={{ color: 'green', padding: 0, margin: 0 }}>G: 78</p>
           <p style={{ color: 'blue', padding: 0, margin: 0 }}>B: 34</p>
         </div>
-      )}
+      ) : null}
       <Handle
         type='source'
         id='top'
@@ -208,10 +211,10 @@ export const SubSubStepNodeTop = ({ data, isConnectable }) => {
         textAlign: 'center',
         border: '2px solid #aaaaaa',
         borderRadius: '40px',
-        background: data.selected ? '#eeeeee' : 'transparent',
+        background: data.hovered ? '#eeeeee' : 'transparent',
       }}
     >
-      {data.selected && (
+      {data.hovered && (
         <div
           style={{
             position: 'absolute',
@@ -264,10 +267,10 @@ export const SubSubStepNodeBottom = ({ data, isConnectable }) => {
         textAlign: 'center',
         border: '2px solid #aaaaaa',
         borderRadius: '40px',
-        background: data.selected ? '#eeeeee' : 'transparent',
+        background: data.hovered ? '#eeeeee' : 'transparent',
       }}
     >
-      {data.selected && (
+      {data.hovered && (
         <div
           style={{
             position: 'absolute',
