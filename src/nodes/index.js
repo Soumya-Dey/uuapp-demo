@@ -3,7 +3,8 @@ import {
   SubStepNodeTop,
   SubStepNodeBottom,
   LogoNode,
-  SubSubStepNode,
+  SubSubStepNodeTop,
+  InvisibleNode,
 } from './CustomNode';
 
 export const initialNodes = [
@@ -109,8 +110,8 @@ export const initialNodes = [
   },
   {
     id: 'node-11',
-    type: 'logo-node',
-    position: { x: 1470, y: 0 },
+    type: 'inv-node',
+    position: { x: 1440, y: 21 },
     data: { label: 'node-11' },
   },
 
@@ -216,8 +217,8 @@ export const initialNodes = [
   },
   {
     id: 'node-2.11',
-    type: 'logo-node',
-    position: { x: 1470, y: 500 },
+    type: 'inv-node',
+    position: { x: 1440, y: 521 },
     data: { label: 'node-11' },
   },
 ];
@@ -227,6 +228,6 @@ export const nodeTypes = {
   'step-node': StepNode,
   'substep-node-top': SubStepNodeTop,
   'substep-node-bottom': SubStepNodeBottom,
-  'subsubstep-node': SubSubStepNode,
-  'logo-node': LogoNode,
+  'subsubstep-node': SubSubStepNodeTop,
+  'inv-node': InvisibleNode,
 };

@@ -14,10 +14,22 @@ export const StepNode = ({
   return (
     // We add this class to use the same styles as React Flow's default nodes.
     <div
-      className='react-flow__node-input'
+      // className='react-flow__node-input'
+      // style={{
+      //   border: '1px solid red',
+      //   background: selected ? '#eeeeee' : 'transparent',
+      // }}
       style={{
-        border: '1px solid red',
-        background: selected ? '#eeeeee' : 'transparent',
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '80px',
+        height: '80px',
+        textAlign: 'center',
+        border: '2px solid black',
+        borderRadius: '41px',
+        background: data.selected ? '#eeeeee' : 'transparent',
       }}
     >
       <Handle
@@ -79,7 +91,7 @@ export const SubStepNodeTop = ({ data, isConnectable }) => {
         padding: '6px 24px',
         minWidth: '80px',
         textAlign: 'center',
-        border: '1px solid #aaaaaa',
+        border: '2px solid black',
         borderRadius: '4px',
         background: data.selected ? '#eeeeee' : 'transparent',
       }}
@@ -120,7 +132,6 @@ export const SubStepNodeTop = ({ data, isConnectable }) => {
     </div>
   ) : null;
 };
-
 export const SubStepNodeBottom = ({ data, isConnectable }) => {
   const showContent = useStore(zoomSelector);
 
@@ -133,7 +144,7 @@ export const SubStepNodeBottom = ({ data, isConnectable }) => {
         padding: '6px 24px',
         minWidth: '80px',
         textAlign: 'center',
-        border: '1px solid #aaaaaa',
+        border: '2px solid black',
         borderRadius: '4px',
         background: data.selected ? '#eeeeee' : 'transparent',
       }}
@@ -180,7 +191,7 @@ const zoomSelectorLevel2 = (s) => {
   return s.transform[2] >= 0.85;
 };
 
-export const SubSubStepNode = ({ data, isConnectable }) => {
+export const SubSubStepNodeTop = ({ data, isConnectable }) => {
   const showContent = useStore(zoomSelectorLevel2);
 
   return showContent ? (
@@ -192,10 +203,10 @@ export const SubSubStepNode = ({ data, isConnectable }) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '80px',
-        height: '80px',
+        minWidth: '80px',
+        padding: '6px 16px',
         textAlign: 'center',
-        border: '1px solid #aaaaaa',
+        border: '2px solid #aaaaaa',
         borderRadius: '40px',
         background: data.selected ? '#eeeeee' : 'transparent',
       }}
@@ -228,6 +239,62 @@ export const SubSubStepNode = ({ data, isConnectable }) => {
       />
       <Handle
         type='target'
+        position={Position.Bottom}
+        id='bottom'
+        isConnectable={isConnectable}
+      />
+      {data.label && <div className='custom-node'>{data.label}</div>}
+    </div>
+  ) : null;
+};
+export const SubSubStepNodeBottom = ({ data, isConnectable }) => {
+  const showContent = useStore(zoomSelectorLevel2);
+
+  return showContent ? (
+    // We add this class to use the same styles as React Flow's default nodes.
+    <div
+      className='sub-step-node'
+      style={{
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minWidth: '80px',
+        padding: '6px 16px',
+        textAlign: 'center',
+        border: '2px solid #aaaaaa',
+        borderRadius: '40px',
+        background: data.selected ? '#eeeeee' : 'transparent',
+      }}
+    >
+      {data.selected && (
+        <div
+          style={{
+            position: 'absolute',
+            padding: '8px 4px',
+            width: '60px',
+            border: '1px solid #aaaaaa',
+            background: '#ffffff',
+            boxShadow: '-2px 2px 8px 0 #dddddd',
+            borderRadius: '4px',
+            right: '-90px',
+            top: '-20px',
+          }}
+        >
+          <p style={{ color: 'red', padding: 0, margin: 0 }}>R: 5</p>
+          <p style={{ color: 'orange', padding: 0, margin: 0 }}>A: 10</p>
+          <p style={{ color: 'green', padding: 0, margin: 0 }}>G: 78</p>
+          <p style={{ color: 'blue', padding: 0, margin: 0 }}>B: 34</p>
+        </div>
+      )}
+      <Handle
+        type='target'
+        id='top'
+        position={Position.Top}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        type='source'
         position={Position.Bottom}
         id='bottom'
         isConnectable={isConnectable}
@@ -282,6 +349,33 @@ export const LogoNode = ({ data, isConnectable }) => {
         id='right'
         isConnectable={isConnectable}
       />
+    </div>
+  );
+};
+
+export const InvisibleNode = ({ data, isConnectable }) => {
+  return (
+    // We add this class to use the same styles as React Flow's default nodes.
+    <div
+      style={{
+        width: '34px',
+        height: '34px',
+        padding: '4px',
+        border: 'none',
+      }}
+    >
+      <Handle
+        type='target'
+        id='left'
+        position={Position.Left}
+        isConnectable={isConnectable}
+      />
+      {/* <Handle
+        type='source'
+        position={Position.Right}
+        id='right'
+        isConnectable={isConnectable}
+      /> */}
     </div>
   );
 };

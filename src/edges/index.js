@@ -254,7 +254,7 @@ export const initialEdges = [
   },
   {
     id: 'edge-7-11',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-7',
     target: 'node-11',
     sourceHandle: 'right',
@@ -525,7 +525,7 @@ export const initialEdges = [
   },
   {
     id: 'edge-2.7-2.11',
-    // type: 'smoothstep',
+    type: 'step-edge-icon',
     source: 'node-2.7',
     target: 'node-2.11',
     sourceHandle: 'right',
