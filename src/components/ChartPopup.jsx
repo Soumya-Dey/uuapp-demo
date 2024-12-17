@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   BarChart,
   Bar,
@@ -8,7 +8,6 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
 } from 'recharts';
 import Drawer from '@mui/material/Drawer';
 import Table from '@mui/material/Table';
