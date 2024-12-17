@@ -1,6 +1,6 @@
 import { Handle, Position, useStore } from '@xyflow/react';
 import { useEffect } from 'react';
-import Chart from '../components/Chart';
+import ChartPopup from '../components/ChartPopup';
 
 export const StepNode = ({
   // positionAbsoluteX,
@@ -97,7 +97,7 @@ export const SubStepNodeTop = ({ data, isConnectable, selected }) => {
         background: data.hovered ? '#eeeeee' : 'transparent',
       }}
     >
-      {selected && <Chart />}
+      {selected && <ChartPopup />}
       {data.hovered && !selected ? (
         <div
           style={{
@@ -151,7 +151,7 @@ export const SubStepNodeBottom = ({ data, isConnectable, selected }) => {
         background: data.hovered ? '#eeeeee' : 'transparent',
       }}
     >
-      {selected && <Chart />}
+      {selected && <ChartPopup />}
       {data.hovered && !selected ? (
         <div
           style={{
