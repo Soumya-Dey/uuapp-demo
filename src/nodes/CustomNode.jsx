@@ -382,3 +382,40 @@ export const InvisibleNode = ({ data, isConnectable }) => {
     </div>
   );
 };
+
+export const PhaseTitleNode = ({ data, isConnectable, selected }) => {
+  return (
+    // We add this class to use the same styles as React Flow's default nodes.
+    <div
+      // className='react-flow__node-input'
+      // style={{
+      //   border: '1px solid red',
+      //   background: selected ? '#eeeeee' : 'transparent',
+      // }}
+      style={{
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // width: `${220 * (data.widthScale || 1)}px`,
+        width: `${
+          data.widthScale > 0 ? `${220 * (data.widthScale || 1)}px` : '100vw'
+        }`,
+        minHeight: '40px',
+        textAlign: 'center',
+        border: '2px solid black',
+        borderRadius: '4px',
+        background: data.hovered ? '#eeeeee' : 'transparent',
+      }}
+    >
+      {data.label && (
+        <div
+          className='custom-node'
+          style={{ fontWeight: '600', fontSize: '1.4rem' }}
+        >
+          {data.label}
+        </div>
+      )}
+    </div>
+  );
+};

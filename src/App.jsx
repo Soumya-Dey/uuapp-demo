@@ -12,12 +12,12 @@ import {
 import '@xyflow/react/dist/style.css';
 
 import './App.css';
-import { initialNodes, nodeTypes } from './nodes';
-import { edgeTypes, initialEdges } from './edges';
+import { indvPhaseNodes, initialNodes, nodeTypes } from './nodes';
+import { edgeTypes, indvPhaseEdges, initialEdges } from './edges';
 
 const Flow = () => {
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+  const [nodes, setNodes] = useState(indvPhaseNodes);
+  const [edges, setEdges] = useState(indvPhaseEdges);
 
   const onNodesChange = useCallback(
     (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
@@ -48,6 +48,11 @@ const Flow = () => {
     );
   };
 
+  const onNodeClick = (_, node) => {
+    alert(node.id);
+    setNodes(indvPhaseNodes);
+  };
+
   return (
     <ReactFlow
       nodes={nodes}
@@ -60,6 +65,7 @@ const Flow = () => {
       nodesDraggable={false}
       onNodeMouseEnter={onNodeMouseEnter}
       onNodeMouseLeave={onNodeMouseLeave}
+      // onNodeClick={onNodeClick}
       attributionPosition='top-right'
       fitView
       // style={rfStyle}
