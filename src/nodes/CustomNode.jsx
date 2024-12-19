@@ -1,5 +1,4 @@
 import { Handle, Position, useStore } from '@xyflow/react';
-import { useEffect } from 'react';
 import ChartPopup from '../components/ChartPopup';
 import DetailPopup from '../components/DetailPopup';
 
@@ -81,7 +80,6 @@ export const StepNode = ({
 };
 
 const zoomSelector = (s) => {
-  // console.log({ s });
   return s.transform[2] >= 0.75;
 };
 
@@ -157,7 +155,6 @@ export const SubStepNodeBottom = ({ data, isConnectable, selected }) => {
 };
 
 const zoomSelectorLevel2 = (s) => {
-  // console.log({ s });
   return s.transform[2] >= 0.85;
 };
 

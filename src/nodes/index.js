@@ -2,8 +2,6 @@ import {
   StepNode,
   SubStepNodeTop,
   SubStepNodeBottom,
-  LogoNode,
-  SubSubStepNodeTop,
   InvisibleNode,
   PhaseTitleNode,
   SubSubStepNodeBottom,
@@ -463,6 +461,7 @@ export const indvPhaseNodes = [
     data: { label: '' },
   },
 ];
+
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
 export const nodeTypes = {

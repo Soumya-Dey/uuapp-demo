@@ -1,14 +1,11 @@
 import {
   BaseEdge,
-  getStraightPath,
   getBezierPath,
-  MarkerType,
   useStore,
   EdgeLabelRenderer,
 } from '@xyflow/react';
 
 const zoomSelector = (s) => {
-  //   console.log({ s });
   return s.transform[2] >= 0.75;
 };
 
@@ -98,7 +95,6 @@ export const CustomEdgeWithIcon = ({
 };
 
 const zoomSelectorLevel2 = (s) => {
-  //   console.log({ s });
   return s.transform[2] >= 0.85;
 };
 
