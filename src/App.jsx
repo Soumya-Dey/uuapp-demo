@@ -16,8 +16,8 @@ import { indvPhaseNodes, initialNodes, nodeTypes } from './nodes';
 import { edgeTypes, indvPhaseEdges, initialEdges } from './edges';
 
 const Flow = () => {
-  const [nodes, setNodes] = useState(indvPhaseNodes);
-  const [edges, setEdges] = useState(indvPhaseEdges);
+  const [nodes, setNodes] = useState(initialNodes);
+  const [edges, setEdges] = useState(initialEdges);
 
   const onNodesChange = useCallback(
     (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
@@ -49,8 +49,26 @@ const Flow = () => {
   };
 
   const onNodeClick = (_, node) => {
-    alert(node.id);
-    setNodes(indvPhaseNodes);
+    console.log({ node });
+
+    if (node.id.startsWith('phase')) {
+      if (node.id === 'phase-node-3') {
+        setNodes(indvPhaseNodes);
+        setEdges(indvPhaseEdges);
+      } else {
+        alert(`Clicked on ${node.data.label}`);
+      }
+    } else if (node.id.startsWith('nav')) {
+      setNodes(initialNodes);
+      setEdges(initialEdges);
+    }
+
+    setNodes((nds) =>
+      nds.map((n) => ({
+        ...n,
+        data: { ...n.data, selected: n.id === node.id },
+      }))
+    );
   };
 
   return (
@@ -65,7 +83,7 @@ const Flow = () => {
       nodesDraggable={false}
       onNodeMouseEnter={onNodeMouseEnter}
       onNodeMouseLeave={onNodeMouseLeave}
-      // onNodeClick={onNodeClick}
+      onNodeClick={onNodeClick}
       attributionPosition='top-right'
       fitView
       // style={rfStyle}

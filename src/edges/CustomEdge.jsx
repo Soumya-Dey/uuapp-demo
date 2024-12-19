@@ -99,7 +99,7 @@ export const CustomEdgeWithIcon = ({
 
 const zoomSelectorLevel2 = (s) => {
   //   console.log({ s });
-  return s.transform[2] >= 0.5;
+  return s.transform[2] >= 0.85;
 };
 
 export const CustomEdgeLevel2 = ({

@@ -1,6 +1,7 @@
 import { Handle, Position, useStore } from '@xyflow/react';
 import { useEffect } from 'react';
 import ChartPopup from '../components/ChartPopup';
+import DetailPopup from '../components/DetailPopup';
 
 export const StepNode = ({
   // positionAbsoluteX,
@@ -28,9 +29,11 @@ export const StepNode = ({
         width: '80px',
         height: '80px',
         textAlign: 'center',
-        border: '2px solid black',
+        border: `2px solid black`,
         borderRadius: '41px',
-        background: data.hovered ? '#eeeeee' : 'transparent',
+        // background: data.hovered ? '#eeeeee' : 'transparent',
+        background: data.bgColor || '#ffffff',
+        color: data.color || '#000000',
       }}
     >
       <Handle
@@ -94,30 +97,12 @@ export const SubStepNodeTop = ({ data, isConnectable, selected }) => {
         textAlign: 'center',
         border: '2px solid black',
         borderRadius: '4px',
-        background: data.hovered ? '#eeeeee' : 'transparent',
+        background: data.bgColor || '#ffffff',
+        color: data.color || '#000000',
       }}
     >
-      {selected && <ChartPopup />}
-      {data.hovered && !selected ? (
-        <div
-          style={{
-            position: 'absolute',
-            padding: '8px 4px',
-            width: '60px',
-            border: '1px solid #aaaaaa',
-            background: '#ffffff',
-            boxShadow: '-2px 2px 8px 0 #dddddd',
-            borderRadius: '4px',
-            right: '-90px',
-            top: '-30px',
-          }}
-        >
-          <p style={{ color: 'red', padding: 0, margin: 0 }}>R: 5</p>
-          <p style={{ color: 'orange', padding: 0, margin: 0 }}>A: 10</p>
-          <p style={{ color: 'green', padding: 0, margin: 0 }}>G: 78</p>
-          <p style={{ color: 'blue', padding: 0, margin: 0 }}>B: 34</p>
-        </div>
-      ) : null}
+      {data.selected && selected ? <ChartPopup /> : null}
+      {data.hovered && !selected ? <DetailPopup /> : null}
       <Handle
         type='target'
         position={Position.Top}
@@ -148,30 +133,12 @@ export const SubStepNodeBottom = ({ data, isConnectable, selected }) => {
         textAlign: 'center',
         border: '2px solid black',
         borderRadius: '4px',
-        background: data.hovered ? '#eeeeee' : 'transparent',
+        background: data.bgColor || '#ffffff',
+        color: data.color || '#000000',
       }}
     >
-      {selected && <ChartPopup />}
-      {data.hovered && !selected ? (
-        <div
-          style={{
-            position: 'absolute',
-            padding: '8px 4px',
-            width: '60px',
-            border: '1px solid #aaaaaa',
-            background: '#ffffff',
-            boxShadow: '-2px 2px 8px 0 #dddddd',
-            borderRadius: '4px',
-            right: '-90px',
-            top: '-20px',
-          }}
-        >
-          <p style={{ color: 'red', padding: 0, margin: 0 }}>R: 5</p>
-          <p style={{ color: 'orange', padding: 0, margin: 0 }}>A: 10</p>
-          <p style={{ color: 'green', padding: 0, margin: 0 }}>G: 78</p>
-          <p style={{ color: 'blue', padding: 0, margin: 0 }}>B: 34</p>
-        </div>
-      ) : null}
+      {data.selected && selected ? <ChartPopup /> : null}
+      {data.hovered && !selected ? <DetailPopup /> : null}
       <Handle
         type='source'
         id='top'
@@ -211,7 +178,8 @@ export const SubSubStepNodeTop = ({ data, isConnectable }) => {
         textAlign: 'center',
         border: '2px solid #aaaaaa',
         borderRadius: '40px',
-        background: data.hovered ? '#eeeeee' : 'transparent',
+        background: data.bgColor || '#ffffff',
+        color: data.color || '#000000',
       }}
     >
       {data.hovered && (
@@ -267,7 +235,8 @@ export const SubSubStepNodeBottom = ({ data, isConnectable }) => {
         textAlign: 'center',
         border: '2px solid #aaaaaa',
         borderRadius: '40px',
-        background: data.hovered ? '#eeeeee' : 'transparent',
+        background: data.bgColor || '#ffffff',
+        color: data.color || '#000000',
       }}
     >
       {data.hovered && (
@@ -291,13 +260,13 @@ export const SubSubStepNodeBottom = ({ data, isConnectable }) => {
         </div>
       )}
       <Handle
-        type='target'
+        type='source'
         id='top'
         position={Position.Top}
         isConnectable={isConnectable}
       />
       <Handle
-        type='source'
+        type='target'
         position={Position.Bottom}
         id='bottom'
         isConnectable={isConnectable}
@@ -405,7 +374,39 @@ export const PhaseTitleNode = ({ data, isConnectable, selected }) => {
         textAlign: 'center',
         border: '2px solid black',
         borderRadius: '4px',
-        background: data.hovered ? '#eeeeee' : 'transparent',
+        background: data.bgColor || '#ffffff',
+        color: data.color || '#000000',
+      }}
+    >
+      {data.label && (
+        <div
+          className='custom-node'
+          style={{ fontWeight: '600', fontSize: '1.4rem' }}
+        >
+          {data.label}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export const NavNode = ({ data }) => {
+  return (
+    // We add this class to use the same styles as React Flow's default nodes.
+    <div
+      // className='react-flow__node-input'
+      // style={{
+      //   border: '1px solid red',
+      //   background: selected ? '#eeeeee' : 'transparent',
+      // }}
+      style={{
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '4px 12px',
+        textAlign: 'center',
+        textDecoration: data.hovered ? 'underline' : 'none',
       }}
     >
       {data.label && (

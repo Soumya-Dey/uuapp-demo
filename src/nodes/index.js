@@ -6,6 +6,8 @@ import {
   SubSubStepNodeTop,
   InvisibleNode,
   PhaseTitleNode,
+  SubSubStepNodeBottom,
+  NavNode,
 } from './CustomNode';
 
 export const initialNodes = [
@@ -13,136 +15,177 @@ export const initialNodes = [
     id: 'phase-node-0',
     type: 'phase-node',
     position: { x: 0, y: -300 },
-    data: { label: 'Identify Need', color: '#545454' },
+    data: {
+      label: 'Identify Need',
+      bgColor: '#545454',
+      color: '#ffffff',
+      widthScale: 1,
+    },
   },
   {
     id: 'node-0',
     type: 'step-node',
     position: { x: 0, y: 0 },
-    data: { label: 'IDN050', color: '#545454' },
+    data: { label: 'IDN050', bgColor: '#545454', color: '#ffffff' },
   },
   {
     id: 'node-1',
     type: 'step-node',
     position: { x: 150, y: 0 },
-    data: { label: 'IDN070', color: '#545454' },
+    data: { label: 'IDN070', bgColor: '#545454', color: '#ffffff' },
   },
 
   {
     id: 'phase-node-1',
     type: 'phase-node',
     position: { x: 300, y: -300 },
-    data: { label: 'Feasibility', color: '#0cc0df' },
+    data: {
+      label: 'Feasibility',
+      bgColor: '#0cc0df',
+      color: '#ffffff',
+      widthScale: 1,
+    },
   },
   {
     id: 'node-2',
     type: 'step-node',
     position: { x: 300, y: 0 },
-    data: { label: 'FES030', color: '#0cc0df' },
+    data: { label: 'FES030', bgColor: '#0cc0df', color: '#ffffff' },
   },
   {
     id: 'node-3',
     type: 'step-node',
     position: { x: 450, y: 0 },
-    data: { label: 'FES070', color: '#0cc0df' },
+    data: { label: 'FES070', bgColor: '#0cc0df', color: '#ffffff' },
   },
 
   {
     id: 'phase-node-2',
     type: 'phase-node',
     position: { x: 600, y: -300 },
-    data: { label: 'Definition', color: '#cb6ce6' },
+    data: {
+      label: 'Definition',
+      bgColor: '#cb6ce6',
+      color: '#ffffff',
+      widthScale: 1,
+    },
   },
   {
     id: 'node-4',
     type: 'step-node',
     position: { x: 600, y: 0 },
-    data: { label: 'DEF030', color: '#cb6ce6' },
+    data: { label: 'DEF030', bgColor: '#cb6ce6', color: '#ffffff' },
   },
   {
     id: 'node-5',
     type: 'step-node',
     position: { x: 750, y: 0 },
-    data: { label: 'DEF050', color: '#cb6ce6' },
+    data: { label: 'DEF050', bgColor: '#cb6ce6', color: '#ffffff' },
   },
 
   {
     id: 'phase-node-3',
     type: 'phase-node',
     position: { x: 900, y: -300 },
-    data: { label: 'Delivery', color: '#8c52ff', widthScale: 1.7 },
+    data: {
+      label: 'Delivery',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+      widthScale: 1.7,
+    },
   },
   {
     id: 'node-6',
     type: 'step-node',
     position: { x: 900, y: 0 },
-    data: { label: 'DEL030', color: '#8c52ff' },
+    data: { label: 'DEL030', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-7',
     type: 'step-node',
     position: { x: 1050, y: 0 },
-    data: { label: 'DEL060', color: '#8c52ff' },
+    data: { label: 'DEL060', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-8',
     type: 'step-node',
     position: { x: 1200, y: 0 },
-    data: { label: 'DEL090', color: '#8c52ff' },
+    data: { label: 'DEL090', bgColor: '#8c52ff', color: '#ffffff' },
   },
 
   {
     id: 'phase-node-4',
     type: 'phase-node',
     position: { x: 1350, y: -300 },
-    data: { label: 'Handover and Close', color: '#0097b2', widthScale: 1.7 },
+    data: {
+      label: 'Handover and Close',
+      bgColor: '#0097b2',
+      color: '#ffffff',
+      widthScale: 1.7,
+    },
   },
   {
     id: 'node-9',
     type: 'step-node',
     position: { x: 1350, y: 0 },
-    data: { label: 'HOC020', color: '#0097b2' },
+    data: { label: 'HOC020', bgColor: '#0097b2', color: '#ffffff' },
   },
   {
     id: 'node-10',
     type: 'step-node',
     position: { x: 1500, y: 0 },
-    data: { label: 'HOC050', color: '#0097b2' },
+    data: { label: 'HOC050', bgColor: '#0097b2', color: '#ffffff' },
   },
   {
     id: 'node-11',
     type: 'step-node',
     position: { x: 1650, y: 0 },
-    data: { label: 'HOC070', color: '#0097b2' },
+    data: { label: 'HOC070', bgColor: '#0097b2', color: '#ffffff' },
   },
 
   {
     id: 'phase-node-5',
     type: 'phase-node',
     position: { x: 1800, y: -300 },
-    data: { label: 'Benefits', color: '#5e17eb', widthScale: 0.4 },
+    data: {
+      label: 'Benefits',
+      bgColor: '#5e17eb',
+      color: '#ffffff',
+      widthScale: 0.4,
+    },
   },
   {
     id: 'node-12',
     type: 'step-node',
     position: { x: 1800, y: 0 },
-    data: { label: 'BER020', color: '#5e17eb' },
+    data: { label: 'BER020', bgColor: '#5e17eb', color: '#ffffff' },
   },
 ];
 
 export const indvPhaseNodes = [
   {
+    id: 'nav-node',
+    type: 'nav-node',
+    position: { x: 0, y: -550 },
+    data: { label: '< Go Back' },
+  },
+  {
     id: 'phase-node-3',
     type: 'phase-node',
     position: { x: 0, y: -350 },
-    data: { label: 'Delivery', color: '#8c52ff', widthScale: -1 },
+    data: {
+      label: 'Delivery',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+      widthScale: -1,
+    },
   },
 
   {
     id: 'node-6.0',
     type: 'step-node',
     position: { x: 0, y: 0 },
-    data: { label: 'DEL020', color: '#8c52ff' },
+    data: { label: 'DEL020', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.0.0',
@@ -150,14 +193,18 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: -65, y: 150 },
-    data: { label: 'Detail design complete' },
+    data: {
+      label: 'Detail design complete',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
 
   {
     id: 'node-6.1',
     type: 'step-node',
     position: { x: 250, y: 0 },
-    data: { label: 'DEL030', color: '#8c52ff' },
+    data: { label: 'DEL030', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.1.0',
@@ -165,7 +212,7 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 200, y: 150 },
-    data: { label: 'Hazop assessment' },
+    data: { label: 'Hazop assessment', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.1.1',
@@ -173,7 +220,7 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 200, y: 250 },
-    data: { label: 'ALM assessment' },
+    data: { label: 'ALM assessment', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.1.2',
@@ -181,7 +228,7 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 200, y: 350 },
-    data: { label: 'CPP checklist' },
+    data: { label: 'CPP checklist', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.1.3',
@@ -189,7 +236,11 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 180, y: 450 },
-    data: { label: 'Has CS approved SoS?' },
+    data: {
+      label: 'Has CS approved SoS?',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
   {
     id: 'node-6.1.4',
@@ -197,14 +248,14 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 200, y: 550 },
-    data: { label: 'Work Authorisation' },
+    data: { label: 'Work Authorisation', bgColor: '#8c52ff', color: '#ffffff' },
   },
 
   {
     id: 'node-6.2',
     type: 'step-node',
     position: { x: 500, y: 0 },
-    data: { label: 'DEL040', color: '#8c52ff' },
+    data: { label: 'DEL040', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.2.0',
@@ -212,7 +263,7 @@ export const indvPhaseNodes = [
     sourcePosition: 'top',
     targetPosition: 'bottom',
     position: { x: 455, y: -120 },
-    data: { label: 'Gateway 3 activity', color: '#8c52ff' },
+    data: { label: 'Gateway 3 activity', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.2.1',
@@ -220,7 +271,7 @@ export const indvPhaseNodes = [
     sourcePosition: 'top',
     targetPosition: 'bottom',
     position: { x: 455, y: -230 },
-    data: { label: 'Gateway 3 outcome', color: '#8c52ff' },
+    data: { label: 'Gateway 3 outcome', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.2.2',
@@ -228,7 +279,11 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 420, y: 150 },
-    data: { label: 'Construction delivery route' },
+    data: {
+      label: 'Construction delivery route',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
   {
     id: 'node-6.2.3',
@@ -236,7 +291,11 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 420, y: 250 },
-    data: { label: 'Construction contract status' },
+    data: {
+      label: 'Construction contract status',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
   {
     id: 'node-6.2.4',
@@ -244,7 +303,11 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 420, y: 350 },
-    data: { label: 'Construction contractor' },
+    data: {
+      label: 'Construction contractor',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
   {
     id: 'node-6.2.5',
@@ -252,14 +315,23 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 440, y: 450 },
-    data: { label: 'Has SoS actualised?' },
+    data: {
+      label: 'Has SoS actualised?',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
 
   {
     id: 'node-6.3',
     type: 'step-node',
     position: { x: 750, y: 0 },
-    data: { label: 'DEL060', color: '#8c52ff' },
+    data: {
+      label: 'DEL060',
+      color: '#8c52ff',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
   {
     id: 'node-6.3.0',
@@ -267,7 +339,11 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 685, y: 150 },
-    data: { label: 'Confidence in achieving PIU' },
+    data: {
+      label: 'Confidence in achieving PIU',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
   {
     id: 'node-6.3.1',
@@ -275,7 +351,7 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 712, y: 250 },
-    data: { label: 'Right first time' },
+    data: { label: 'Right first time', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.3.2',
@@ -283,7 +359,7 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 712, y: 350 },
-    data: { label: 'Environment' },
+    data: { label: 'Environment', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.3.3',
@@ -291,22 +367,31 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 712, y: 450 },
-    data: { label: 'Safety' },
+    data: { label: 'Safety', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-6.3.4',
     type: 'substep-node-bottom',
     sourcePosition: 'bottom',
     targetPosition: 'top',
-    position: { x: 680, y: 550 },
-    data: { label: 'Overall construction assessment' },
+    position: { x: 630, y: 550 },
+    data: {
+      label: 'Overall construction assessment',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
 
   {
     id: 'node-6.4',
     type: 'step-node',
     position: { x: 1000, y: 0 },
-    data: { label: 'DEL070', color: '#8c52ff' },
+    data: {
+      label: 'DEL070',
+      color: '#8c52ff',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
   },
   {
     id: 'node-6.4.0',
@@ -314,14 +399,62 @@ export const indvPhaseNodes = [
     sourcePosition: 'bottom',
     targetPosition: 'top',
     position: { x: 950, y: 150 },
-    data: { label: 'Overall I&A assessment' },
+    data: {
+      label: 'Overall I&A assessment',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
+  },
+  {
+    id: 'node-6.4.0.0',
+    type: 'subsubstep-node-bottom',
+    sourcePosition: 'bottom',
+    targetPosition: 'top',
+    position: { x: 955, y: 220 },
+    data: {
+      label: 'DESAR - final submission',
+      bgColor: '#8c52ff',
+      color: '#ffffff',
+    },
+  },
+  {
+    id: 'node-6.4.0.1',
+    type: 'subsubstep-node-bottom',
+    sourcePosition: 'bottom',
+    targetPosition: 'top',
+    position: { x: 1000, y: 290 },
+    data: { label: 'HAZZCOM', bgColor: '#8c52ff', color: '#ffffff' },
+  },
+  {
+    id: 'node-6.4.0.2',
+    type: 'subsubstep-node-bottom',
+    sourcePosition: 'bottom',
+    targetPosition: 'top',
+    position: { x: 975, y: 360 },
+    data: { label: 'Training delivery', bgColor: '#8c52ff', color: '#ffffff' },
+  },
+  {
+    id: 'node-6.4.0.3',
+    type: 'subsubstep-node-bottom',
+    sourcePosition: 'bottom',
+    targetPosition: 'top',
+    position: { x: 995, y: 430 },
+    data: { label: 'ALM', bgColor: '#8c52ff', color: '#ffffff' },
+  },
+  {
+    id: 'node-6.4.0.4',
+    type: 'subsubstep-node-bottom',
+    sourcePosition: 'bottom',
+    targetPosition: 'top',
+    position: { x: 995, y: 500 },
+    data: { label: 'HAZOP', bgColor: '#8c52ff', color: '#ffffff' },
   },
 
   {
     id: 'node-6.5',
     type: 'step-node',
     position: { x: 1250, y: 0 },
-    data: { label: 'DEL080', color: '#8c52ff' },
+    data: { label: 'DEL080', bgColor: '#8c52ff', color: '#ffffff' },
   },
   {
     id: 'node-inv',
@@ -329,120 +462,15 @@ export const indvPhaseNodes = [
     position: { x: 1440, y: 21 },
     data: { label: '' },
   },
-  // {
-  //   id: 'node-0',
-  //   type: 'step-node',
-  //   position: { x: 0, y: 0 },
-  //   data: { label: 'node-0' },
-  // },
-  // {
-  //   id: 'node-1',
-  //   type: 'step-node',
-  //   position: { x: 250, y: 0 },
-  //   data: { label: 'node-1' },
-  // },
-  // {
-  //   id: 'node-2',
-  //   type: 'substep-node-top',
-  //   sourcePosition: 'top',
-  //   targetPosition: 'bottom',
-  //   position: { x: 250, y: -100 },
-  //   data: { label: 'node-2' },
-  // },
-  // {
-  //   id: 'node-3',
-  //   type: 'step-node',
-  //   data: { label: 'node-3' },
-  //   position: { x: 500, y: 0 },
-  // },
-  // {
-  //   id: 'node-4',
-  //   type: 'substep-node-top',
-  //   // sourcePosition: 'top',
-  //   // targetPosition: 'bottom',
-  //   position: { x: 250, y: -200 },
-  //   data: { label: 'node-4' },
-  // },
-  // {
-  //   id: 'node-4.1',
-  //   type: 'subsubstep-node',
-  //   sourcePosition: 'top',
-  //   targetPosition: 'bottom',
-  //   position: { x: 120, y: -150 },
-  //   data: { label: 'node-4.1' },
-  // },
-  // {
-  //   id: 'node-4.2',
-  //   type: 'subsubstep-node',
-  //   sourcePosition: 'top',
-  //   targetPosition: 'bottom',
-  //   position: { x: 420, y: -150 },
-  //   data: { label: 'node-4.2' },
-  // },
-  // {
-  //   id: 'node-5',
-  //   type: 'step-node',
-  //   position: { x: 750, y: 0 },
-  //   data: { label: 'node-5' },
-  // },
-  // {
-  //   id: 'node-6',
-  //   type: 'step-node',
-  //   position: { x: 1000, y: 0 },
-  //   data: { label: 'node-6' },
-  // },
-  // {
-  //   id: 'node-7',
-  //   type: 'step-node',
-  //   position: { x: 1250, y: 0 },
-  //   data: { label: 'node-7' },
-  // },
-  // {
-  //   id: 'node-8',
-  //   type: 'substep-node-bottom',
-  //   sourcePosition: 'bottom',
-  //   targetPosition: 'top',
-  //   position: { x: 1000, y: 100 },
-  //   data: { label: 'node-8' },
-  // },
-  // {
-  //   id: 'node-9',
-  //   type: 'substep-node-bottom',
-  //   sourcePosition: 'bottom',
-  //   targetPosition: 'top',
-  //   position: { x: 1000, y: 200 },
-  //   data: { label: 'node-9' },
-  // },
-  // {
-  //   id: 'node-10',
-  //   type: 'substep-node-top',
-  //   sourcePosition: 'top',
-  //   targetPosition: 'bottom',
-  //   position: { x: 1250, y: -100 },
-  //   data: { label: 'node-10' },
-  // },
-  // {
-  //   id: 'node-10.1',
-  //   type: 'subsubstep-node',
-  //   sourcePosition: 'top',
-  //   targetPosition: 'bottom',
-  //   position: { x: 1150, y: -180 },
-  //   data: { label: 'node-10.1' },
-  // },
-  // {
-  //   id: 'node-11',
-  //   type: 'inv-node',
-  //   position: { x: 1440, y: 21 },
-  //   data: { label: 'node-11' },
-  // },
 ];
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
 export const nodeTypes = {
+  'nav-node': NavNode,
   'phase-node': PhaseTitleNode,
   'step-node': StepNode,
   'substep-node-top': SubStepNodeTop,
   'substep-node-bottom': SubStepNodeBottom,
-  'subsubstep-node': SubSubStepNodeTop,
+  'subsubstep-node-bottom': SubSubStepNodeBottom,
   'inv-node': InvisibleNode,
 };
