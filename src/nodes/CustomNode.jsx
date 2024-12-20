@@ -2,6 +2,10 @@ import { Handle, Position, useStore } from '@xyflow/react';
 import ChartPopup from '../components/ChartPopup';
 import DetailPopup from '../components/DetailPopup';
 
+const zoomSelector = (s) => {
+  return s.transform[2] >= 0.75;
+};
+
 export const StepNode = ({
   // positionAbsoluteX,
   // positionAbsoluteY,
@@ -11,6 +15,7 @@ export const StepNode = ({
 }) => {
   // const x = `${Math.round(positionAbsoluteX)}px`;
   // const y = `${Math.round(positionAbsoluteY)}px`;
+  const showContent = useStore(zoomSelector);
 
   return (
     // We add this class to use the same styles as React Flow's default nodes.
@@ -35,6 +40,14 @@ export const StepNode = ({
         color: data.color || '#000000',
       }}
     >
+      {data.hovered && !selected && !showContent ? (
+        <DetailPopup
+          label={data.label}
+          subtitle='Create project in the project management system'
+          bgColor={data.bgColor}
+          color={data.color}
+        />
+      ) : null}
       <Handle
         type='target'
         id='left'
@@ -77,10 +90,6 @@ export const StepNode = ({
       />
     </div>
   );
-};
-
-const zoomSelector = (s) => {
-  return s.transform[2] >= 0.75;
 };
 
 export const SubStepNodeTop = ({ data, isConnectable, selected }) => {

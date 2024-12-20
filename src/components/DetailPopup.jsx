@@ -1,7 +1,56 @@
 import React from 'react';
 
-const DetailPopup = () => {
-  return (
+const DetailPopup = ({
+  label = '',
+  subtitle = '',
+  bgColor = '#ffffff',
+  color = '#000000',
+}) => {
+  return label && label.length ? (
+    <div
+      style={{
+        position: 'absolute',
+        padding: '12px 18px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px',
+        justifyContent: 'center',
+        alignItems: 'cenetr',
+        minWidth: '160px',
+        boxShadow: '-2px 2px 8px 0 #dddddd',
+        borderRadius: '4px',
+        left: '50%',
+        top: '-210px',
+        transform: 'translateX(-50%)',
+        background: bgColor || '#ffffff',
+        border: `2px solid black`,
+      }}
+    >
+      <p
+        style={{
+          color: color || '#000000',
+          padding: '0 0 4px 0',
+          margin: 0,
+          fontWeight: 600,
+          fontSize: '1.2rem',
+          borderBottom: '1px solid black',
+        }}
+      >
+        {label}
+      </p>
+      <span
+        style={{
+          color: color || '#000000',
+          padding: 0,
+          margin: 0,
+          fontWeight: 600,
+          fontSize: '1.2rem',
+        }}
+      >
+        {subtitle}
+      </span>
+    </div>
+  ) : (
     <div
       style={{
         position: 'absolute',
